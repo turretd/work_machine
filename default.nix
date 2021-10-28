@@ -3,4 +3,6 @@ let
     system = "x86_64-linux";
     configuration = import ./configuration.nix;
   }).system;
-in { inherit work_machine; }
+in {
+  machine = { inherit work_machine; };
+}

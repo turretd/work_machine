@@ -12,6 +12,14 @@
     #./docker-fix.nix
   ];
 
+  services.self-deploy = {
+    enable = true;
+    repository = "git@github.com:turretd/work_machine";
+    startAt = "hourly";
+    nixAttribute = "machine";
+  };
+
+
   nixpkgs.config.allowUnfree = true;
 
   nix.autoOptimiseStore = true;
